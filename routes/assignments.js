@@ -33,14 +33,13 @@ function postAssignment(req, res){
     assignment.note = req.body.note;
     assignment.remarques = req.body.remarques;
 
-    console.log("POST assignment reçu :");
-    console.log(assignment)
-
     assignment.save( (err) => {
         if(err){
             res.send('cant post assignment ', err);
         }
-        res.json({ message: `${assignment.nom} saved!`})
+        console.log("POST assignment reçu :");
+        console.log(assignment)
+        res.json({ message: `${assignment} saved!`})
     })
 }
 
