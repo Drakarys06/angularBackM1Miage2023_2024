@@ -5,7 +5,7 @@ let User = require('../model/utilisateur');
 function getUser(req, res){
     let userId = req.params.id; // = id
 
-    User.findOne({_id: userId}, (err, user) =>{
+    User.findById(userId, (err, user) =>{
         if(err){res.send(err)}
         res.json(user);
     })
