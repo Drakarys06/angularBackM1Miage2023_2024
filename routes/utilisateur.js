@@ -3,9 +3,9 @@ let User = require('../model/utilisateur');
 
 // Récupérer un utilisateur par son login (GET)
 function getUser(req, res){
-    let userLogin = req.params.login;
+    let idUser = req.params.id; // = id
 
-    User.findOne({login: userLogin}, (err, user) =>{
+    User.findById(idUser, (err, user) =>{
         if(err){res.send(err)}
         res.json(user);
     })
