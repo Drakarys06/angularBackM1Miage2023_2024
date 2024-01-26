@@ -3,12 +3,11 @@ let User = require('../model/utilisateur');
 
 // Récupérer un utilisateur par son login (GET)
 function getUser(req, res){
-    let userId = req.params.id; // = id
+    let userId = req.params.id;
 
-    User.findById(userId, (err, user) =>{
+    User.findOne({id: userId}, (err, user) =>{
         if(err){res.send(err)}
         res.json(user);
     })
 }
-
 module.exports = { getUser };

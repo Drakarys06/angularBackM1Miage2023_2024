@@ -4,6 +4,7 @@ var aggregatePaginate = require("mongoose-aggregate-paginate-v2");
 let Schema = mongoose.Schema;
 
 let UserSchema = Schema({
+    id: Number,
     login: String,
     password: String,
     role: String
