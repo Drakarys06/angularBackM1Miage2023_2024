@@ -59,6 +59,9 @@ app.route(prefix + '/assignments')
 app.route(prefix + '/utilisateurs/:id')
   .get(user.getUser);
 
+app.route(prefix + '/utilisateurs')
+  .get(user.getUsers);
+
 // On démarre le serveur
 app.listen(port, "0.0.0.0");
 console.log('Serveur démarré sur http://localhost:' + port);
