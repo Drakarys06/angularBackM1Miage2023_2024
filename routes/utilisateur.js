@@ -15,12 +15,13 @@ function getUser(req, res){
 }
 
 function getUsers(req, res){
-    console.log("getUsers");
-    User.find({}, (err, users) => {
-        if(err){res.send(err)}
-        res.json(users);
-        console.log(`Users: ${JSON.stringify(users)}`);
-    })
+    User.find((err, users) => {
+        if(err){
+            res.send(err)
+        }
+
+        res.send(users);
+    });
 }
 
 module.exports = { getUser, getUsers};
