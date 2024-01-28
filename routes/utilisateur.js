@@ -6,10 +6,10 @@ function getUser(req, res){
     let userId = req.params.login;
     console.log(userId);
 
-    User.findOne({id: userId}, (err, user) =>{
+    User.findOne({id: userId}, (err, login) =>{
         if(err){res.send(err)}
-        console.log(`User: ${JSON.stringify(user)}`);
-        res.json(user);
+        console.log(`User: ${JSON.stringify(login)}`);
+        res.json(login);
 
     })
 }
